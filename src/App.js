@@ -17,14 +17,19 @@ function App() {
       .get(`${api.base}weather?q=${city}&appid=${api.key}`)
       .then((res) => {
         const responce = res.data;
+        const { name, sys, weather, main } = responce;
+        const { country } = sys;
+        const { icon, description } = weather[0];
+        const { temp, temp_min, temp_max } = main;
+
         setState({
-          city: responce.name,
-          country: responce.sys.country,
-          icon: responce.weather[0].icon,
-          temp: Math.ceil(responce.main.temp - 273),
-          min: Math.ceil(responce.main.temp_min - 273),
-          max: Math.ceil(responce.main.temp_max - 273),
-          description: responce.weather[0].description,
+          city: name,
+          country: country,
+          icon: icon,
+          temp: Math.ceil(temp - 273),
+          min: Math.ceil(temp_min - 273),
+          max: Math.ceil(temp_max - 273),
+          description: description,
         });
       })
       .catch((error) => console.log(error));
