@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function ChooseCity({ fetchData }) {
   const [city, setCity] = useState("");
+
+  useEffect(() => {
+    fetchData("Beograd");
+  }, []);
 
   const changeCityName = () => {
     fetchData(city);

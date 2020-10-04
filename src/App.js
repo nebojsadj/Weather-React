@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import Header from "./components/Header";
 import ChooseCity from "./components/ChooseCity";
@@ -11,10 +11,6 @@ function App() {
     key: "8872c766bfcbd0e51f6217c1e8eaaf87",
     base: "https://api.openweathermap.org/data/2.5/",
   };
-
-  useEffect(() => {
-    fetchData("Beograd");
-  }, []);
 
   const fetchData = (city) => {
     axios
