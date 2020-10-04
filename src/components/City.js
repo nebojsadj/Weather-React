@@ -1,11 +1,13 @@
 import React from "react";
 
-function City({ state }) {
+function City({ state, error }) {
   return (
     <div className="conteiner">
       <div className="row mt-5">
         <div className="col-8 offset-2">
-          <h1 className="text-center display-4 text-light">{state.city}</h1>
+          <h1 className="text-center display-4 text-light">
+            {error === "" ? state.city : error}
+          </h1>
           <div className="row">
             <div className="col-10 offset-1 ">
               <img

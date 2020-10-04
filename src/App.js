@@ -6,6 +6,7 @@ import City from "./components/City";
 
 function App() {
   const [state, setState] = useState({});
+  const [error, setError] = useState("");
 
   const api = {
     key: "8872c766bfcbd0e51f6217c1e8eaaf87",
@@ -31,15 +32,16 @@ function App() {
           max: Math.ceil(temp_max - 273),
           description: description,
         });
+        setError("");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError("The city name is incorrect!"));
   };
 
   return (
     <div>
       <Header />
       <ChooseCity fetchData={fetchData} />
-      <City state={state} />
+      <City state={state} error={error} />
     </div>
   );
 }
