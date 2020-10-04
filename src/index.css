@@ -1,0 +1,20 @@
+body {
+    background: url('./bg/bg.png');
+}
+
+input {
+    background-color: transparent !important;
+    border: 0 !important;
+    border-bottom: 2px solid orange !important;
+    font-size: x-large !important;
+    user-select: none !important;
+}
+
+input:focus {
+    box-shadow: none !important;
+}
+
+img {
+    width: 180px;
+    height: 180px;
+}
