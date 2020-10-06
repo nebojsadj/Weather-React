@@ -6,7 +6,7 @@ function City({ state, error }) {
       <div className="row mt-5">
         <div className="col-8 offset-2">
           <h1 className="text-center display-4 text-light">
-            {error === "" ? state.city : error}
+            {error === "" ? `${state.city} , ${state.country}` : error}
           </h1>
           <div className="row">
             <div className="col-10 offset-1 ">
