@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetch_thunk } from "./redux/actions";
+import { fetch_thunk, fetch_error } from "./redux/actions";
 
 function ChooseCity() {
   const [city, setCity] = useState("");
@@ -8,6 +8,7 @@ function ChooseCity() {
 
   const changeCityName = () => {
     dispatch(fetch_thunk(city));
+    dispatch(fetch_error(""));
     setCity("");
   };
 

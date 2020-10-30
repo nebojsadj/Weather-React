@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, StrictMode } from "react";
 import { useDispatch } from "react-redux";
 import Header from "./components/Header";
 import ChooseCity from "./components/ChooseCity";
@@ -12,11 +12,11 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <StrictMode>
       <Header />
       <ChooseCity />
       <City />
-    </div>
+    </StrictMode>
   );
 }
 

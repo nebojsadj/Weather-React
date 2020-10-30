@@ -31,7 +31,11 @@ export const fetch_thunk = (city) => {
           })
         );
       })
-      .catch((error) => dispatch(fetch_error(error)));
+      .catch((error) =>
+        dispatch(
+          fetch_error(`Error entering city name or ${error.mesage} city!`)
+        )
+      );
   };
 };
 
