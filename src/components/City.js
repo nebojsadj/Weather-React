@@ -5,7 +5,6 @@ function City() {
   const loading = useSelector((state) => state.loading);
   const cityData = useSelector((state) => state.cityData);
   const error = useSelector((state) => state.error);
-  console.log(error);
   const {
     name,
     country,
@@ -23,7 +22,7 @@ function City() {
           <h1 className="text-center display-4 text-light">
             {(loading && "Loading...") || error || `${name} , ${country}`}
           </h1>
-          {!error ? (
+          {!error && (
             <div className="row">
               <div className="col-10 offset-1 ">
                 {!loading && (
@@ -52,7 +51,7 @@ function City() {
                 </h3>
               </div>
             </div>
-          ) : null}
+          )}
         </div>
       </div>
     </div>
