@@ -25,7 +25,7 @@ function City() {
           {!error && (
             <div className="row">
               <div className="col-10 offset-1 ">
-                {!loading && (
+                {icon && (
                   <img
                     src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
                     alt="iconq"
@@ -33,21 +33,21 @@ function City() {
                   />
                 )}
                 <h3 className="text-center mt-2 text-light display-4">
-                  {!loading && `${Math.ceil(temp - 273)} ° C`}
+                  {temp && `${Math.ceil(temp - 273)} ° C`}
                 </h3>
                 <div className="row">
                   <div className="col-8 offset-2 mt-3">
                     <h3 className="mt-4 text-light float-left">
-                      {!loading && `min ${Math.ceil(temp_min - 273)} ° C`}
+                      {temp_min && `min ${Math.ceil(temp_min - 273)} ° C`}
                     </h3>
                     <h3 className="mt-4 text-light float-right">
-                      {!loading && `min ${Math.ceil(temp_max - 273)} ° C`}
+                      {temp_max && `min ${Math.ceil(temp_max - 273)} ° C`}
                     </h3>
                   </div>
                 </div>
 
                 <h3 className="text-center text-light mt-5">
-                  {!loading && description}
+                  {description && description}
                 </h3>
               </div>
             </div>
