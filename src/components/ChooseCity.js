@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fetch_thunk } from "./redux/actions";
 
-function ChooseCity({ fetchData }) {
+function ChooseCity() {
   const [city, setCity] = useState("");
-
-  useEffect(() => {
-    fetchData("Beograd");
-  }, []);
+  const dispatch = useDispatch();
 
   const changeCityName = () => {
-    fetchData(city);
+    dispatch(fetch_thunk(city));
     setCity("");
   };
 

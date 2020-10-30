@@ -1,47 +1,21 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import Header from "./components/Header";
 import ChooseCity from "./components/ChooseCity";
 import City from "./components/City";
+import { fetch_thunk } from "./components/redux/actions";
 
 function App() {
-  const [state, setState] = useState({});
-  const [error, setError] = useState("");
-
-  const api = {
-    key: "8872c766bfcbd0e51f6217c1e8eaaf87",
-    base: "https://api.openweathermap.org/data/2.5/",
-  };
-
-  const fetchData = (city) => {
-    axios
-      .get(`${api.base}weather?q=${city}&appid=${api.key}`)
-      .then((res) => {
-        const responce = res.data;
-        const { name, sys, weather, main } = responce;
-        const { country } = sys;
-        const { icon, description } = weather[0];
-        const { temp, temp_min, temp_max } = main;
-
-        setState({
-          city: name,
-          country: country,
-          icon: icon,
-          temp: Math.ceil(temp - 273),
-          min: Math.ceil(temp_min - 273),
-          max: Math.ceil(temp_max - 273),
-          description: description,
-        });
-        setError("");
-      })
-      .catch((error) => setError("The city name is incorrect!"));
-  };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetch_thunk("Beograd"));
+  }, []);
 
   return (
     <div>
       <Header />
-      <ChooseCity fetchData={fetchData} />
-      <City state={state} error={error} />
+      <ChooseCity />
+      <City />
     </div>
   );
 }
