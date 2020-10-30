@@ -10,7 +10,7 @@ function reducer(state = initialState, action) {
     case FETCH_DATA_LOADING:
       return { ...state, loading: true };
     case FETCH_DATA_SUCCESS:
-      return { ...state, loading: false, cityData: action.payload };
+      return { loading: false, cityData: action.payload, error: "" };
     case FETCH_DATA_ERROR:
       return {
         loading: false,
