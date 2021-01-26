@@ -1,20 +1,107 @@
 body {
-    background: url('./bg/bg.png');
+  background: url("./bg/bg.png");
 }
 
 input {
-    background-color: transparent !important;
-    border: 0 !important;
-    border-bottom: 2px solid orange !important;
-    font-size: x-large !important;
-    user-select: none !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  border-bottom: 2px solid orange !important;
+  font-size: x-large !important;
+  user-select: none !important;
 }
 
 input:focus {
-    box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 img {
-    width: 180px;
-    height: 180px;
+  width: 180px;
+  height: 180px;
+}
+
+@media all and (max-width: 768px) {
+  .display-4 {
+    font-size: 36px;
+  }
+  .ml {
+    font-size: 25px;
+  }
+  .mr {
+    font-size: 25px;
+  }
+  .mb {
+    font-size: 25px;
+  }
+}
+@media all and (max-width: 425px) {
+  .display-4 {
+    font-size: 30px;
+  }
+  .btn {
+    font-size: 14px;
+  }
+  .ml {
+    font-size: 19px;
+  }
+  .mr {
+    font-size: 19px;
+  }
+  .mb {
+    font-size: 19px;
+  }
+  input {
+    font-size: 20px !important;
+  }
+  img {
+    width: 160px;
+    height: 160px;
+  }
+}
+@media all and (max-width: 375px) {
+  .display-4 {
+    font-size: 28px;
+  }
+  .btn {
+    font-size: 13px;
+  }
+  .ml {
+    font-size: 17px;
+  }
+  .mr {
+    font-size: 17px;
+  }
+  .mb {
+    font-size: 17px;
+  }
+  input {
+    font-size: 18px !important;
+  }
+  img {
+    width: 160px;
+    height: 160px;
+  }
+}
+@media all and (max-width: 320px) {
+  .display-4 {
+    font-size: 24px;
+  }
+  .btn {
+    font-size: 11px;
+  }
+  .ml {
+    font-size: 16px;
+  }
+  .mr {
+    font-size: 16px;
+  }
+  .mb {
+    font-size: 16px;
+  }
+  input {
+    font-size: 15px !important;
+  }
+  img {
+    width: 130px;
+    height: 130px;
+  }
 }

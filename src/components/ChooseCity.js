@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { fetch_thunk } from "./redux/actions";
+import { fetch_thunk } from "../redux/actions";
 
 function ChooseCity() {
   const [city, setCity] = useState("");

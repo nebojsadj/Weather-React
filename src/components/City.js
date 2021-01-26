@@ -18,7 +18,7 @@ function City() {
   return (
     <div className="container">
       <div className="row mt-5">
-        <div className="col-8 offset-2">
+        <div className="col-10 offset-1">
           <h1 className="text-center display-4 text-light">
             {(loading && "Loading...") || error || `${name} , ${country}`}
           </h1>
@@ -36,17 +36,17 @@ function City() {
                   {temp && `${Math.ceil(temp - 273)} ° C`}
                 </h3>
                 <div className="row">
-                  <div className="col-8 offset-2 mt-3">
-                    <h3 className="mt-4 text-light float-left">
+                  <div className="col-10 offset-1 mt-3">
+                    <h3 className="mt-4 text-light float-left ml">
                       {temp_min && `min ${Math.ceil(temp_min - 273)} ° C`}
                     </h3>
-                    <h3 className="mt-4 text-light float-right">
+                    <h3 className="mt-4 text-light float-right mr">
                       {temp_max && `min ${Math.ceil(temp_max - 273)} ° C`}
                     </h3>
                   </div>
                 </div>
 
-                <h3 className="text-center text-light mt-5">
+                <h3 className="text-center text-light mt-5 mb">
                   {description && description}
                 </h3>
               </div>

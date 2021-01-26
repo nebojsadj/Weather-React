@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Header from "./components/Header";
 import ChooseCity from "./components/ChooseCity";
 import City from "./components/City";
-import { fetch_thunk } from "./components/redux/actions";
+import { fetch_thunk } from "./redux/actions";
 
 function App() {
   const dispatch = useDispatch();
